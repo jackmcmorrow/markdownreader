@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>View Markdown</title>
+	<link rel="stylesheet" href="css/knacss.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- <link rel="stylesheet" href="css/user.css"> -->
+	<style id="vmdTheme"></style>
+	<style id="vmdPreviewTheme"></style>
+</head>
+<body>
+
+	<div id="modalConfig" class="modal">
+		<h3>Config</h3>
+		<form id="config" name="config">
+			<div class="autogrid2">
+				<div>
+					<label for="theme">Theme: 
+						<select name="theme" id="theme">
+							<option value="0">Bright</option>
+							<option value="1">Middle</option>
+							<option value="2">Dark</option>
+						</select>
+					</label>
+				</div>
+				<div>
+					<label for="fontSize">
+						Base Font Size: <input name="fontSize" id="fontSize" value="11" type="number" style="width: 60px;">px
+					</label>
+				</div>
+				<div>
+					<label for="lineHeight">
+						Line height: <input name="lineHeight" id="lineHeight" value="1" type="number" style="width: 60px;">
+					</label>
+				</div>
+			</div>
+			<div id="preview" class="preview autogrid2" style="margin-top: 20px;">
+				<div>
+					<h1>Header 1</h1>
+					<h2>Header 2</h2>
+					<h3>Header 3</h3>
+					<h4>Header 4</h4>
+					<h5>Header 5</h5>
+				</div>
+				<div>
+					<p>Lorem ipsum dolor sit amet, <a href="#">consectetur</a> adipisicing elit. Molestias accusamus explicabo temporibus vel quod illum suscipit labore mollitia deserunt natus omnis possimus, nihil id eveniet ullam odit, nesciunt tempore aut.</p>
+				</div>
+				<div>
+					<ul>
+						<li>Unumbered list item 1</li>
+						<li>Unumbered list item 2</li>
+						<li>Unumbered list item 3</li>
+					</ul>
+				</div>
+				<div>
+					<ol>
+						<li>Numbered list item 1</li>
+						<li>Numbered list item 2</li>
+						<li>Numbered list item 3</li>
+					</ol>
+				</div>
+			</div>
+		</form>
+			<div class="modal-actions">
+				<button id="applyConfigs">
+					Apply
+				</button>
+				<button id="closeConfigModal">
+					Close
+				</button>
+			</div>
+		
+	</div>
+
+	<div id="modalExport" class="modal">
+		<h3>Export</h3>
+		<form id="export" name="export">
+			<textarea name="exportArea" id="exportArea" style="width: 100%;" rows="10" class="textarea-code"></textarea>
+		</form>
+		<div class="modal-actions">
+			<button id="btnCopyAll">Copy to clipboard</button>
+			<button id="btnSaveToFile">Save to file</button>
+			<button id="closeExportModal">Close</button>
+		</div>
+
+	</div>
+
+	<div id="modalImport" class="modal">
+		<h3>Import</h3>
+		<p>Paste or write some Markdown below and click "Import to viewer"</p>
+		<form id="import">
+			<textarea name="importArea" id="importArea" style="width: 100%;" rows="10" class="textarea-code"></textarea>
+		</form>
+		<div class="modal-actions">
+			<button id="btnUpdateViewer">Import to viewer</button>
+			<button id="closeImportModal">Close</button>
+		</div>
+	</div>
+
+	<div id="modalAbout" class="modal">
+		<h2 class="center">?</h2>
+		<p class="center">
+			Made by <a href="mailto:daniel@shinka.com.br" target="_blank">Daniel Cavalcanti</a> <br>
+			Visit <a href="http://shinka.com.br" target="_blank">Shinka</a> for info about the developer.
+		</p>
+		<h3>Credits</h3>
+		<ul>
+			<li><a target="_blank" href="https://github.com/evilstreak">Dominic Baggott made markdown-js</a></li>
+			<li><a target="_blank" href="https://github.com/ebidel">Eric Bidelman made dnd.js</a></li>
+		</ul>
+		<div class="modal-actions">
+			<button id="closeAbout">Close</button>
+		</div>
+	</div>
+	
+	<div id="viewer">
+		
+	</div>
+
+	<div class="tools">
+		<div class="right">
+			<button id="btnLoadFile">Load file</button>
+			<button id="btnImport">Import</button>
+			<button id="btnPrint" disabled>Print</button>
+			<button id="btnExport" disabled>HTML</button>
+			<button id="openConfigModal" class="icon icon-asteri">Config</button>
+			<button id="btnAbout">?</button>
+		</div>
+		<div class="left">
+			<strong>Drag & Drop Markdown file</strong>
+		</div>
+	</div>
+
+	<script src="vendor/markdown.min.js"></script>
+	<script src="vendor/dnd.js"></script>
+	<script src="vmd.js"></script>
+</body>
+</html>
